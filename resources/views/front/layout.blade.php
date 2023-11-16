@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,12 @@
     <title>@yield('title', 'CouponakApp')</title>
 
     {{-- Bootsrtap 5 --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {{-- LTR --}}
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
+    {{-- RTL --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
     {{-- /Bootsrtap 5 --}}
 
     {{-- Fontawsome 6 --}}
@@ -44,9 +48,11 @@
     @include('front.inc.nav')
     {{-- /Nav --}}
 
-    {{-- Main Page Content --}}
-    @yield('content')
-    {{-- /Main Page Content --}}
+    <div class="content-wrapper container py-3 px-4">
+        {{-- Main Page Content --}}
+        @yield('content')
+        {{-- /Main Page Content --}}
+    </div>
 
     {{-- Footer --}}
     @include('front.inc.footer')
